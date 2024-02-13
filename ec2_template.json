@@ -1,0 +1,26 @@
+{
+   "Resources" : {
+   "CloudtechBurnerEC2" : {
+   "Type" : "AWS::EC2::Instance",
+   "Properties" : {
+      "ImageId" : "ami-0449c34f967dbf18a",
+      "KeyName" : "Jenkin-server",
+      "BlockDeviceMappings" : [
+         {
+            "DeviceName" : "/dev/sdm",
+            "Ebs" : {
+              "VolumeType" : "io1",
+              "Iops" : "200",
+              "DeleteOnTermination" : "false",
+              "VolumeSize" : "20"
+            }
+          }, 
+          {
+            "DeviceName" : "/dev/sdk",
+            "NoDevice" : {}
+          }
+      ]
+   }
+}
+   }
+}
