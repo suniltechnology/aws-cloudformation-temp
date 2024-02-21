@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Id": "s3-notification",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "SNS:Publish",
+      "Resource": "arn:aws:sns:ap-south-1:756404205791:s3-notification",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:s3:::sunil-bucket-03"
+        }
+      }
+    }
+  ]
+}
